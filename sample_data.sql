@@ -16,7 +16,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- 1. DIM_DATE
 -- ============================================================
 INSERT INTO Dim_Date (date_key, full_date, day, month, month_name, quarter, year, week_number)
-
 WITH RECURSIVE date_series AS (
     SELECT DATE('2023-01-01') AS dt
     UNION ALL
@@ -24,7 +23,6 @@ WITH RECURSIVE date_series AS (
     FROM date_series
     WHERE dt < '2024-12-31'
 )
-
 SELECT DATE_FORMAT(dt, '%Y%m%d'), dt, DAY(dt), MONTH(dt), MONTHNAME(dt), QUARTER(dt), YEAR(dt), WEEK(dt)
 FROM date_series;
 
