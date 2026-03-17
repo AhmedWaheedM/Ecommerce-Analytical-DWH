@@ -78,5 +78,5 @@ Columns extracted:
   * moving_avg_profit → smoothed trend
   * profit_volatility → rolling profit over past 7 days
 
-
+---
 
