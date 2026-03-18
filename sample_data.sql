@@ -120,7 +120,7 @@ seeded_data AS (
     -- We use RAND(id + constant) to 'lock' the random values for each row
     SELECT 
         id AS order_line_id,
-        1000 + FLOOR(id / 2) AS order_id,
+        1000 + FLOOR(id / 2.1) AS order_id,
         -- Random date between 2023-01-01 and 2024-12-31
         CAST(DATE_FORMAT(DATE_ADD('2023-01-01', INTERVAL FLOOR(RAND(id + 1) * 730) DAY), '%Y%m%d') AS UNSIGNED) AS date_key,
         FLOOR(1 + RAND(id + 2) * 20) AS customer_key,
