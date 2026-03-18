@@ -19,6 +19,8 @@ Columns extracted:
   * week_number → drill-up or filter by week
   * total_daily_net → raw daily revenue
   * moving_avg_trend_daily → smoothed short-term revenue trend
+
+> According to the ISO 8601 standard, the week begins on Monday
 -------------------------------------------------------------------------------------------
 
 B.7. Rank products within each category based on revenue performance
