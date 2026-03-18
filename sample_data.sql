@@ -29,7 +29,7 @@ FROM date_series;
 -- ============================================================
 -- 2. DIM_CUSTOMER
 -- ============================================================
-INSERT INTO Dim_Customer VALUES
+INSERT INTO Dim_Customer (customer_key, customer_id, gender, age_group, city, region, registration_date, customer_segment) VALUES
 (1, 'CUST001','Male',  '25-34','Cairo',          'North','2022-03-15','VIP'),
 (2, 'CUST002','Female','18-24','Alexandria',      'North','2022-06-20','Regular'),
 (3, 'CUST003','Male',  '35-44','Giza',            'North','2021-11-10','VIP'),
@@ -54,7 +54,7 @@ INSERT INTO Dim_Customer VALUES
 -- ============================================================
 -- 3. DIM_CATEGORY
 -- ============================================================
-INSERT INTO Dim_Category VALUES
+INSERT INTO Dim_Category (category_key, category_name, parent_category, seasonal_flag) VALUES
 (1,'Electronics',  'Technology',FALSE),
 (2,'Fashion',      'Lifestyle', TRUE),
 (3,'Home & Living','Lifestyle', FALSE),
@@ -64,7 +64,7 @@ INSERT INTO Dim_Category VALUES
 -- ============================================================
 -- 4. DIM_PRODUCT
 -- ============================================================
-INSERT INTO Dim_Product VALUES
+INSERT INTO Dim_Product (product_key, product_id, product_name, brand, subcategory, launch_date, stock_available) VALUES
 (1, 'PROD001','Samsung Galaxy S24',    'Samsung',  'Smartphones', '2024-01-15',85),
 (2, 'PROD002','Apple iPhone 15',       'Apple',    'Smartphones', '2023-09-22',60),
 (3, 'PROD003','Sony WH-1000XM5',       'Sony',     'Headphones',  '2023-05-10',120),
@@ -89,7 +89,7 @@ INSERT INTO Dim_Product VALUES
 -- ============================================================
 -- 5. DIM_PAYMENT 
 -- ============================================================
-INSERT INTO Dim_Payment VALUES
+INSERT INTO Dim_Payment (payment_key, payment_method) VALUES
 (1,'Credit Card'),
 (2,'Debit Card'),
 (3,'Digital Wallet'),
@@ -98,7 +98,7 @@ INSERT INTO Dim_Payment VALUES
 -- ============================================================
 -- 6. DIM_SHIPPING 
 -- ============================================================
-INSERT INTO Dim_Shipping VALUES
+INSERT INTO Dim_Shipping (shipping_key, shipping_type, delivery_days) VALUES
 (1,'Standard', 5),
 (2,'Express',  2),
 (3,'Same-Day', 1);
