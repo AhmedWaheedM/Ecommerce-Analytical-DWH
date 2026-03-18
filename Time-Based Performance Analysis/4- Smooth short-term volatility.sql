@@ -1,3 +1,4 @@
+-- A.4. Smooth short-term volatility using moving average trend analysis
 CREATE or REPLACE VIEW daily_net_trend AS
 WITH Daily_Net AS (
     SELECT 
