@@ -1,4 +1,4 @@
-# 📊 All Queries Documentation
+# All Queries Documentation
 
 All queries are run through **views** to facilitate the import process in **Power BI**.
 
