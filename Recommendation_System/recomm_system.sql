@@ -35,8 +35,7 @@ WITH product_pairs AS (
     JOIN fact_order_line b
         ON a.order_id = b.order_id
         AND a.product_key < b.product_key
-        -- AND ABS(a.date_key - b.date_key) <= 1000
-        -- arround : 33 month
+        
 
     JOIN dim_product dp
         ON a.product_key = dp.product_key

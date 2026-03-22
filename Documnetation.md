@@ -85,6 +85,5 @@ All queries are run through **views** to facilitate the import process in **Powe
 ### Observations:
 - Total co-occurring product combinations: **9 only**
 - Products are **different**
-- Transactions are **not on the same date**
-- Products are sold within a time window of **33 months**
+
  
