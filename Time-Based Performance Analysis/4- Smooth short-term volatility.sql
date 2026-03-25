@@ -1,13 +1,18 @@
 -- A.4. Smooth short-term volatility using moving average trend analysis
-CREATE or REPLACE VIEW daily_net_trend AS
+CREATE OR REPLACE VIEW daily_net_trend AS
 WITH Daily_Net AS (
     SELECT 
-        d.full_date, week_number,
+        d.full_date, 
+        d.week_number,
         DAYNAME(d.full_date) AS day_name,
         SUM(f.net_amount) AS total_daily_net
     FROM fact_order_line f
-    JOIN dim_date d ON f.date_key = d.date_key
-    GROUP BY d.full_date
+    JOIN dim_date d 
+        ON f.date_key = d.date_key
+    GROUP BY 
+        d.full_date, 
+        d.week_number, 
+        DAYNAME(d.full_date)
 )
 SELECT
     full_date,
