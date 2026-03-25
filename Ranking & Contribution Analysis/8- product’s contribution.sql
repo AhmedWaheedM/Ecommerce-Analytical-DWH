@@ -14,6 +14,8 @@ with product_revenue as (
      from fact_order_line
     group by category_key
 )
+SELECT category_key, category_revenue
+FROM category_revenue;
 
-SELECT *
-FROM product_contribution;
+
+select * from product_contribution;

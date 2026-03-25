@@ -21,3 +21,5 @@ SELECT
         ), 3
     ) AS moving_avg_trend_daily
 FROM Daily_Net;
+
+select * from daily_net_trend;

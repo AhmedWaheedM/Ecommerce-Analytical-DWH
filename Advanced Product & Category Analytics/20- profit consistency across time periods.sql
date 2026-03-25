@@ -12,23 +12,28 @@ create or replace view profit_consistency as
        group by d.full_date,
                 d.week_number
    )
-   
-   select *,
-          round(
-             avg(total_daily_profit)
-             over(
-                 order by full_date
-                rows between 6 preceding and current row
-             ),
-             2
-          ) as moving_avg_profit,
-          round(
-             stddev_samp(total_daily_profit)
-             over(
-                 order by full_date
-                rows between 6 preceding and current row
-             ),
-             2
-          ) as profit_volatility
-     from profit_consistency
-    order by full_date;
+   select full_date,
+          week_number,
+          total_discount,
+          total_daily_profit
+     from daily_profit;
+
+select *,
+       round(
+          avg(total_daily_profit)
+          over(
+              order by full_date
+             rows between 6 preceding and current row
+          ),
+          2
+       ) as moving_avg_profit,
+       round(
+          stddev_samp(total_daily_profit)
+          over(
+              order by full_date
+             rows between 6 preceding and current row
+          ),
+          2
+       ) as profit_volatility
+  from profit_consistency
+ order by full_date;
