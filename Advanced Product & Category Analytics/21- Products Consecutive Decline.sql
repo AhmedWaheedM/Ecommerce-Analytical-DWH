@@ -1,4 +1,4 @@
-# 21- Identify products experiencing sustained decline across consecutive periods
+-- 21- Identify products experiencing sustained decline across consecutive periods
 
 CREATE OR REPLACE VIEW products_consecutive_decline AS
 	WITH monthly_product_revenue AS (
